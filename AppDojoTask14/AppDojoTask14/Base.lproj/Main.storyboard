@@ -62,7 +62,21 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ReL-A4-2E0"/>
+                    <navigationItem key="navigationItem" id="ReL-A4-2E0">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="RJk-I5-SjX">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Sou-rP-lh4">
+                                <rect key="frame" x="372.5" y="9" width="21.5" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" image="plus" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                                <connections>
+                                    <segue destination="4h8-mn-YVo" kind="presentation" modalPresentationStyle="fullScreen" id="3x7-cw-PyV"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="iMh-9k-af9" id="utF-2f-Fzy"/>
                     </connections>
@@ -70,6 +84,71 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="123.88392857142857"/>
+        </scene>
+        <!--Add View Controller-->
+        <scene sceneID="xcC-ma-cfg">
+            <objects>
+                <viewController id="wyv-rm-soA" customClass="AddViewController" customModule="AppDojoTask14" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cUD-rF-Sjh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOc-fm-xUB">
+                                <rect key="frame" x="60" y="174" width="51" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dvw-c6-OYz">
+                                <rect key="frame" x="151" y="167.5" width="203" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="IhI-Jm-RFw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LOc-fm-xUB" firstAttribute="leading" secondItem="IhI-Jm-RFw" secondAttribute="leading" constant="60" id="5cm-dT-cSk"/>
+                            <constraint firstItem="IhI-Jm-RFw" firstAttribute="trailing" secondItem="Dvw-c6-OYz" secondAttribute="trailing" constant="60" id="De4-BJ-doR"/>
+                            <constraint firstItem="Dvw-c6-OYz" firstAttribute="leading" secondItem="LOc-fm-xUB" secondAttribute="trailing" constant="40" id="XLi-rM-JrP"/>
+                            <constraint firstItem="Dvw-c6-OYz" firstAttribute="centerY" secondItem="LOc-fm-xUB" secondAttribute="centerY" id="ht9-2L-PzC"/>
+                            <constraint firstItem="Dvw-c6-OYz" firstAttribute="width" secondItem="LOc-fm-xUB" secondAttribute="width" multiplier="4:1" id="nzH-tY-vG6"/>
+                            <constraint firstItem="LOc-fm-xUB" firstAttribute="top" secondItem="IhI-Jm-RFw" secondAttribute="top" constant="86" id="odn-rM-JM9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="cVk-xB-dgu">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="42Z-Xj-g1P">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="LZV-Wk-tGC">
+                                <rect key="frame" x="20" y="7" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <segue destination="U5z-8b-CBU" kind="unwind" unwindAction="tapCancelWithSegue:" id="2hl-AX-a9n"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Ygp-bB-5cd">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Rhs-pw-Rky">
+                                <rect key="frame" x="302" y="5" width="92" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Save">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                </state>
+                                <connections>
+                                    <segue destination="U5z-8b-CBU" kind="unwind" unwindAction="tapSaveWithSegue:" id="7my-bd-erA"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addTextField" destination="Dvw-c6-OYz" id="e5q-P4-rxZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hwb-WO-uQS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="U5z-8b-CBU" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3077" y="724"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VLy-QT-QAR">
@@ -89,8 +168,28 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="123.88392857142857"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GMl-Vf-WND">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4h8-mn-YVo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Dqb-kg-17P"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9lc-TQ-CF1">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wyv-rm-soA" kind="relationship" relationship="rootViewController" id="vAF-4a-mPh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NpQ-zs-dww" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2148" y="724"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
