@@ -25,7 +25,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
         tableView.dataSource = self
         tableView.delegate = self
     }
@@ -33,18 +33,18 @@ class ViewController: UIViewController {
     @IBAction func tapCancel(segue: UIStoryboardSegue) {}
 
     @IBAction func tapSave(segue: UIStoryboardSegue) {
-        if let vc = segue.source as? AddViewController {
-            let item = CheckItem(name: vc.addTextField.text!, isChecked: false)
-            tableItems.append(item)
-            tableView.reloadData()
-        }
+        guard let vc = segue.source as? AddViewController else { return }
+
+        let item = CheckItem(name: vc.name, isChecked: false)
+        tableItems.append(item)
+        tableView.reloadData()
     }
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView,
                numberOfRowsInSection section: Int) -> Int {
-        return tableItems.count
+        tableItems.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

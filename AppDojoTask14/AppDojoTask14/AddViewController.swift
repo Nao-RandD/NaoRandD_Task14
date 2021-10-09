@@ -8,5 +8,9 @@
 import UIKit
 
 class AddViewController: UIViewController {
-    @IBOutlet weak var addTextField: UITextField!
+    @IBOutlet private weak var addTextField: UITextField!
+
+    var name: String {
+        addTextField.text ?? ""
+    }
 }
